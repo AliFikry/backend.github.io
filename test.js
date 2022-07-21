@@ -83,7 +83,7 @@
 
 // }
 
-
+// firebase.database().ref("matchById/").remove()
 
 
 time.forEach(e => {
@@ -114,17 +114,17 @@ time.forEach(e => {
                     match_awayteam_penalty_score: result[i]["match_awayteam_penalty_score"],
                     match_hometeam_system: result[i]["match_hometeam_system"],
                     match_awayteam_system: result[i]["match_awayteam_system"],
-                    match_live:result[i]["match_live"],
-                    match_date:result[i]["match_date"],
-                    match_stadium:result[i]["match_stadium"],
-                    match_referee:result[i]["match_referee"],
-                    team_home_badge:result[i]["team_home_badge"],
-                    team_away_badge:result[i]["team_away_badge"],
-                    goalscorer:result[i]["goalscorer"],
-                    cards:result[i]["cards"],
-                    substitutions:result[i]["substitutions"],
-                    lineup:result[i]["lineup"],
-                    statistics:result[i]["statistics"],
+                    match_live: result[i]["match_live"],
+                    match_date: result[i]["match_date"],
+                    match_stadium: result[i]["match_stadium"],
+                    match_referee: result[i]["match_referee"],
+                    team_home_badge: result[i]["team_home_badge"],
+                    team_away_badge: result[i]["team_away_badge"],
+                    goalscorer: result[i]["goalscorer"],
+                    cards: result[i]["cards"],
+                    substitutions: result[i]["substitutions"],
+                    lineup: result[i]["lineup"],
+                    statistics: result[i]["statistics"],
                 })
 
 

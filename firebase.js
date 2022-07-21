@@ -16,7 +16,7 @@ var apiKey = "e3554144c5e71116340837a3ffd789e5cf103fe8da6e50dcc0ba99b90bef5db3"
 var time = [];
 
 
-for (let index = 20; index >= 0; index--) {
+for (let index = 90; index >= 0; index--) {
     time.push(moment().subtract(index, "days").format("yyyy[-]MM[-]DD").toString())
 
 }
