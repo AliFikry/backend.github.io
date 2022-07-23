@@ -93,10 +93,12 @@ time.forEach(e => {
         .then(result => {
             console.log(e);
             console.log(result);
-            fetch(`https://apiv3.apifootball.com/?action=get_predictions&match_id=${result[i]["match_id"]}&APIkey=${apiKey}`)
-                .then(response => response.json())
-                .then(predict => {
-                    for (let i = 0; i < result.length; i++) {
+
+
+            for (let i = 0; i < result.length; i++) {
+                fetch(`https://apiv3.apifootball.com/?action=get_predictions&match_id=${result[i]["match_id"]}&APIkey=${apiKey}`)
+                    .then(response => response.json())
+                    .then(predict => {
                         firebase.database().ref("matchById/" + result[i]["match_id"] + "/").set({
                             match_id: result[i]["match_id"],
                             country_name: result[i]["country_name"],
@@ -128,20 +130,21 @@ time.forEach(e => {
                             substitutions: result[i]["substitutions"],
                             lineup: result[i]["lineup"],
                             statistics: result[i]["statistics"],
-                            prob_HW:predict[0]["prob_HW"],
-                            prob_D:predict[0]["prob_D"],
-                            prob_AW:predict[0]["prob_AW"]
+                            prob_HW: predict[0]["prob_HW"],
+                            prob_D: predict[0]["prob_D"],
+                            prob_AW: predict[0]["prob_AW"]
                         })
-
-
-                    }
-                })
-
-        })
-});
-
-// firebase.database().ref("matchById/").remove()
+                    })
 
 
 
+            }
 
+        });
+
+    // firebase.database().ref("matchById/").remove()
+
+
+
+
+})
