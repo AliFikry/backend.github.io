@@ -129,11 +129,13 @@ time.forEach(e => {
                 fetch(`https://apiv3.apifootball.com/?action=get_predictions&match_id=${result[i]["match_id"]}&APIkey=${apiKey}`)
                     .then(response => response.json())
                     .then(pre => {
-                        firebase.database().ref("matchById/" + result[i]["match_id"] + "/data/").set({
-                            prob_HW: pre[0]["prob_HW"],
-                            prob_D: pre[0]["prob_D"],
-                            prob_AW:pre[0]["prob_AW"]
-                        })
+                        if (pre[0]["error"] != 404) {
+                            firebase.database().ref("matchById/" + result[i]["match_id"] + "/data/pre/").set({
+                                prob_HW: pre[0]["prob_HW"],
+                                prob_D: pre[0]["prob_D"],
+                                prob_AW: pre[0]["prob_AW"]
+                            })
+                        }
                     })
 
             }
@@ -144,4 +146,4 @@ time.forEach(e => {
 
 
 
-// firebase.database().ref("matchById/").remove()
+//firebase.database().ref("matchById/").remove()
