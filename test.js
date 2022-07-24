@@ -132,11 +132,7 @@
 //         })
 // });
 
-fetch(`https://apiv3.apifootball.com/?action=get_events&from=${moment().subtract(120, "days").format("yyyy[-]MM[-]DD").toString()}&to=${moment().add(90, "days").format("yyyy[-]MM[-]DD").toString()}&APIkey=${apiKey}`)
+console.log(allTeamsId.length)
 
-.then(response=>response.json())
-.then(result =>{
-console.log(result);
-})
 
 firebase.database().ref("matchById/").remove()
