@@ -1,1 +1,1 @@
-firebase.database().ref("/" ).remove();
+firebase.database().ref("matchById/" ).remove();
