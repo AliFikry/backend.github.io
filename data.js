@@ -13,5 +13,5 @@ allTeamsId = allTeamsId.filter(function (value, index, array) {
 }); allLeagueId = allLeagueId.filter(function (value, index, array) {
     return array.indexOf(value) === index;
 });
-console.log(allTeamsId);
-console.log(allLeagueId);
+// console.log(allTeamsId);
+// console.log(allLeagueId);

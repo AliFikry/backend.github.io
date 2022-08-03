@@ -86,9 +86,17 @@
 // firebase.database().ref("matchById/").remove()
 
 
-time.forEach(e => {
-    // https://apiv3.apifootball.com/?action=get_events&from=2021-07-12&to=2021-07-12&league_id=1&APIkey=e3554144c5e71116340837a3ffd789e5cf103fe8da6e50dcc0ba99b90bef5db3
-    fetch(`https://apiv3.apifootball.com/?action=get_events&from=${e}&to=${e}&APIkey=${apiKey}`)
+// time.forEach(e => {
+//     // https://apiv3.apifootball.com/?action=get_events&from=2021-07-12&to=2021-07-12&league_id=1&APIkey=e3554144c5e71116340837a3ffd789e5cf103fe8da6e50dcc0ba99b90bef5db3
+    
+// });
+
+// console.log(allTeamsId.length)
+var smallest=884361,largest=1111738;
+
+for (let i = smallest; i <= largest; i++) {
+    // console.log(i);
+    fetch(`https://apiv3.apifootball.com/?action=get_events&match_id=${i}&APIkey=${apiKey}`)
         .then(response => response.json())
         .then(result => {
             console.log(e);
@@ -127,12 +135,8 @@ time.forEach(e => {
                     statistics: result[i]["statistics"],
                 })
               
-
             }
         })
-});
-
-// console.log(allTeamsId.length)
-
+}
 
 // firebase.database().ref("matchById/").remove()
